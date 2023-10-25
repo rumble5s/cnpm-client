@@ -1,0 +1,60 @@
+.Loginform {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    width: 20%;
+    height: 40%;
+    background-color: #e67300;
+    border-radius: 20px;
+    inset: calc();
+}
+
+.Loginform .username {
+    position: absolute;
+    top : 10%;
+    left: 10%;
+    width: 80%;
+    height: 8%;
+    border-radius: 10px;
+    inset: calc();
+    font-size: medium;
+}
+
+.Loginform .password {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    height: 8%; 
+    border-radius: 10px;
+    inset: calc();
+    font-size: medium;
+}
+
+.Loginform .SignIn {
+    position: absolute;
+    top : 40%;
+    left: 35%;
+    width: 30%;
+    height: 8%;
+    border-radius: 20px;
+    inset: calc();
+    font-size: medium;
+    background-color: #e67300;
+    color: wheat;
+}
+
+.Loginform .SignUp {
+    position: absolute;
+    top : 55%;
+    left: 35%;
+    width: 30%;
+    height: 8%;
+    border-radius: 20px;
+    inset: calc();
+    font-size: medium;
+    background-color: #e67300;
+    color: wheat;
+}
+
+

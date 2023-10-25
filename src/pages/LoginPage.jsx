@@ -1,7 +1,7 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import "../css/LoginForm.css"
 
 export function LoginPage() {
     const BASE_URL = 'http://127.0.0.1:8000';
@@ -22,10 +22,14 @@ export function LoginPage() {
                 }
             });
 
-            if (response.status) {
-                const group_id = response.data.group_id;
-                localStorage.setItem('groupid', JSON.stringify({ group_id }));
-                navigate("/");
+            if (response.status==200) {
+                if(response.data.isadmin)
+                    navigate("/admin");
+                else {
+                    const group_id = response.data.group_id;
+                    localStorage.setItem('groupid', JSON.stringify({ group_id }));
+                    navigate("/");
+                }
             }
 
         } catch (error) {
@@ -45,7 +49,7 @@ export function LoginPage() {
                 }
             });
 
-            if (response.status) {
+            if (response.status==200) {
                 const group_id = response.data.group_id;
                 localStorage.setItem('groupid', JSON.stringify({ group_id }));
                 navigate("/");
@@ -59,13 +63,13 @@ export function LoginPage() {
     return (
         <>
             {groupid !== null ? null :
-                <Fragment>
-                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} /><br></br>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br></br>
+                <div className="Loginform">
+                    <input className="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} /><br></br>
+                    <input className="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br></br>
 
-                    <button onClick={SignIn}>Login</button>
-                    <button onClick={SignUp}>Sign Up</button>
-                </Fragment>
+                    <button className="SignIn" onClick={SignIn}>Login</button>
+                    <button className="SignUp" onClick={SignUp}>Sign Up</button>
+                </div>
             }
         </>
     )
