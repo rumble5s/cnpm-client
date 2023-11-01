@@ -34,18 +34,18 @@ export function LoginPage() {
                 }
             });
 
-            if (response.status==200) {
-                if(response.data.isadmin)
-                    navigate("/admin");
-                else {
-                    const group_id = response.data.group_id;
-                    localStorage.setItem('groupid', JSON.stringify({ group_id }));
-                    navigate("/");
-                }
+            if(response.data.error)
+                alert(response.data.error);
+            else if(response.data.isadmin)
+                navigate("/admin");
+            else {
+                const group_id = response.data.group_id;
+                localStorage.setItem('groupid', JSON.stringify({ group_id }));
+                navigate("/");
             }
 
         } catch (error) {
-            console.error('[Error]', error);
+            alert("Cant connect to server");
         }
     }
 
@@ -61,14 +61,16 @@ export function LoginPage() {
                 }
             });
 
-            if (response.status==200) {
+            if(response.data.error)
+                alert(response.data.error);
+            else {
                 const group_id = response.data.group_id;
                 localStorage.setItem('groupid', JSON.stringify({ group_id }));
                 navigate("/");
             }
 
         } catch (error) {
-            console.error('[Error]', error);
+            alert("Cant connect to server");
         }
     }
 
