@@ -1,11 +1,37 @@
 import { NavBar } from "../components/NavBar";
+import { useEffect, useState } from "react";
 
 export const AdminPage = () => {
-    return(
+
+    const [AllGroup, setAllGroups] = useState([]);
+
+    useEffect(() => {
+        async () => {
+            try {
+                const response = await axios({
+                    method: 'POST',
+                    url: BASE_URL + '/admin_get_groups/',
+                    data: {
+                        auth: JSON.parse(localStorage.getItem('isadmin')),
+                    }
+                });
+
+                if (response.data.error)
+                    alert(response.data.error);
+                else {
+                    setAllGroups(response.data.groups);
+                    console.log(AllGroup);
+                }
+
+            } catch (error) {
+                alert("Cant connect to server");
+            }
+        }
+    }, []);
+
+    return (
         <>
-            <div >
-                <h1>This is admin site</h1>
-            </div>
+            <NavBar />
         </>
     );
 };

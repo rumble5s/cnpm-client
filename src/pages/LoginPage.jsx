@@ -24,8 +24,11 @@ export function LoginPage() {
 
             if(response.data.error)
                 alert(response.data.error);
-            else if(response.data.isadmin)
+            else if(response.data.isadmin) {
+                const isadmin = response.data.isadmin;
+                localStorage.setItem('isadmin', JSON.stringify({ isadmin }));
                 navigate("/admin");
+            }
             else {
                 const group_id = response.data.group_id;
                 localStorage.setItem('groupid', JSON.stringify({ group_id }));
