@@ -1,37 +1,48 @@
-import { NavBar } from "../components/NavBar";
-import { useEffect, useState } from "react";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "../css/AdminForm.css";
 
 export const AdminPage = () => {
-
-    const [AllGroup, setAllGroups] = useState([]);
-
-    useEffect(() => {
-        async () => {
-            try {
-                const response = await axios({
-                    method: 'POST',
-                    url: BASE_URL + '/admin_get_groups/',
-                    data: {
-                        auth: JSON.parse(localStorage.getItem('isadmin')),
-                    }
-                });
-
-                if (response.data.error)
-                    alert(response.data.error);
-                else {
-                    setAllGroups(response.data.groups);
-                    console.log(AllGroup);
-                }
-
-            } catch (error) {
-                alert("Cant connect to server");
-            }
-        }
-    }, []);
-
-    return (
-        <>
-            <NavBar />
-        </>
-    );
+  return (
+      <div className="macbook-air">
+        <div className="div">
+          <div className="overlap">
+            <div className="frame">
+              <div className="type-wrapper">
+                <div className="type">Admin Page</div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="button-container"
+            role="group"
+            aria-label="Large button group"
+          >
+            <button type="button" className="btn btn-primary btn-lg">
+              Large button
+            </button>
+            <button type="button" className="btn btn-primary btn-lg">
+              Large button
+            </button>
+            <button type="button" className="btn btn-primary btn-lg">
+              Large button
+            </button>
+          </div>
+          <div className="widget">
+            <div className="overlap-group">
+              <div className="text-wrapper-3">Assigned Risks</div>
+              <p className="p">There are no risks assigned.</p>
+            </div>
+          </div>
+          <div className="overlap-wrapper">
+            <div className="overlap-2">
+              <div className="text-wrapper-4">Assigned Action Item</div>
+              <p className="text-wrapper-5">
+                There are no action items assigned.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  );
 };
