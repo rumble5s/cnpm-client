@@ -1,11 +1,14 @@
-import { NavBar } from "../components/NavBar";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "../css/AdminForm.css";
+import AdminNavBar from "../components/AdminNavBar";
+import AdminContent from "../components/AdminContent";
 
 export const AdminPage = () => {
-    return(
-        <>
-            <div >
-                <h1>This is admin site</h1>
-            </div>
-        </>
-    );
+  return (
+    <div className = "overflow-auto">
+      {/* <AdminNavBar/> */}
+      <AdminContent/>
+    </div>
+  );
 };

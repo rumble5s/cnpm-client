@@ -6,3 +6,7 @@ html,body {
     height: 100%;
     background-color: #ffe6cc;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
