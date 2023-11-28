@@ -7,6 +7,5 @@ html,body {
     background-color: #ffe6cc;
 }
 
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
