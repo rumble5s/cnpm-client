@@ -687,7 +687,7 @@ const AdminContent = () => {
     >
       <div className="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
         <form action="#" method="GET" className="md:hidden mb-2">
-          <label for="sidebar-search" className="sr-only">Search</label>
+          <label for = "sidebar-search" className="sr-only">Search</label>
           <div className="relative">
             <div
               className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
