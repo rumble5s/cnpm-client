@@ -1,60 +1,68 @@
-.Loginform {
-    position: absolute;
-    top: 25%;
-    left: 40%;
-    width: 20%;
-    height: 40%;
-    background-color: #e67300;
-    border-radius: 20px;
-    inset: calc();
+body, html {
+    height: 100%;
 }
 
-.Loginform .username {
-    position: absolute;
-    top : 10%;
-    left: 10%;
-    width: 80%;
-    height: 8%;
+.bg {
+    background-image: url("../img/japan-vintage.jpg");
+    height: 100vh;
+    background-position: center;
+}
+
+.Auth-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+
+.support-layout {
+    width: 520px;
+    padding-top: 20px;
     border-radius: 10px;
-    inset: calc();
-    font-size: medium;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    background-color: rgb(205, 255, 159);
 }
 
-.Loginform .password {
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    width: 80%;
-    height: 8%; 
-    border-radius: 10px;
-    inset: calc();
-    font-size: medium;
+.support-title {
+    text-align: left;
+    padding-left: 5px;
+    margin-bottom: 1em;
+    font-size: 16px;
+    color: rgb(34, 34, 34);
+    font-weight: 600;
 }
 
-.Loginform .SignIn {
-    position: absolute;
-    top : 40%;
-    left: 35%;
-    width: 30%;
-    height: 8%;
-    border-radius: 20px;
-    inset: calc();
-    font-size: medium;
-    background-color: #e67300;
-    color: wheat;
+.support-content {
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-.Loginform .SignUp {
-    position: absolute;
-    top : 55%;
-    left: 35%;
-    width: 30%;
-    height: 8%;
-    border-radius: 20px;
-    inset: calc();
-    font-size: medium;
-    background-color: #e67300;
-    color: wheat;
+.Auth-form {
+    width: 520px;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 8px;
+    background-color: white;
 }
 
+.Auth-form-content {
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
+.Auth-form-title {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 32px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+}

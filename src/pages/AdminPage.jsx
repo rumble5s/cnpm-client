@@ -1,37 +1,12 @@
-import { NavBar } from "../components/NavBar";
-import { useEffect, useState } from "react";
+import React from "react";
+import AdminNavBar from "../components/AdminNavBar";
+import AdminContent from "../components/AdminContent";
 
 export const AdminPage = () => {
-
-    const [AllGroup, setAllGroups] = useState([]);
-
-    useEffect(() => {
-        async () => {
-            try {
-                const response = await axios({
-                    method: 'POST',
-                    url: BASE_URL + '/admin_get_groups/',
-                    data: {
-                        auth: JSON.parse(localStorage.getItem('isadmin')),
-                    }
-                });
-
-                if (response.data.error)
-                    alert(response.data.error);
-                else {
-                    setAllGroups(response.data.groups);
-                    console.log(AllGroup);
-                }
-
-            } catch (error) {
-                alert("Cant connect to server");
-            }
-        }
-    }, []);
-
-    return (
-        <>
-            <NavBar />
-        </>
-    );
+  return (
+    <div className = "overflow-auto">
+      {/* <AdminNavBar/> */}
+      <AdminContent/>
+    </div>
+  );
 };
