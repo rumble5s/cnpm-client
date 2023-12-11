@@ -706,7 +706,7 @@ const AdminContent = () => {
               <button
                 type="button"
                 className="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                aria-controls="dropdown-pages"
+                aria-controls="dropdown"
                 data-collapse-toggle="dropdown-pages"
               >
                 <svg
@@ -739,7 +739,23 @@ const AdminContent = () => {
                   ></path>
                 </svg>
               </button>
-              <ul id="dropdown-pages" className="hidden py-2 space-y-2">
+              <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+      </li>
+    </ul>
+</div>
+              {/* <ul id="dropdown-pages" className="hidden py-2 space-y-2">
                 <li>
                   <a
                     href="#"
@@ -764,7 +780,8 @@ const AdminContent = () => {
                     Calendar
                   </a>
                 </li>
-              </ul>
+              </ul> */}
+              
             </li>
             <li>
               <button
