@@ -97,55 +97,39 @@ export const AdminPage = () => {
             <div className="mb-3">
               <h4>Admin Dashboard</h4>
             </div>
-            <div className="row">
-              <div className="col-12 col-md-6 d-flex">
-                <div className="card flex-fill border-0 illustration">
-                  <div className="card-body p-0 d-flex flex-fill">
-                    <div className="row g-0 w-100">
-                      <div className="col-6">
-                        <div className="p-3 m-1">
-                          <h4>Welcome Back</h4>
-                          <p className="mb-0">Admin Dashboard, MinhDz</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div className="container text-center">
               <div class="row">
                 <div class="col">
-                  <div className="card" style={{ width: "18rem" }}>
+                  <div className="card" style={{ width: "26rem", height: "13rem" }}>
                     <div className="card-body">
                       <h5 className="card-title">32</h5>
                       <h6 className="card-subtitle mb-2 text-body-secondary">
                         Căn hộ
                       </h6>
-                      <i className="bi bi-house" style={{fontSize: '2rem', color: 'cornflowerblue'}}></i>
+                      <i className="bi bi-house" style={{fontSize: '4rem', color: 'cornflowerblue'}}></i>
                     </div>
                   </div>
                 </div>
                 <div class="col">
-                <div className="card" style={{ width: "18rem" }}>
+                <div className="card" style={{ width: "26rem", height: "13rem" }}>
                     <div className="card-body">
                       <h5 className="card-title">73</h5>
                       <h6 className="card-subtitle mb-2 text-body-secondary">
                         Cư dân
                       </h6>
-                      <i class="bi bi-people" style={{fontSize: '2rem', color: 'cornflowerblue'}}></i>
+                      <i class="bi bi-people" style={{fontSize: '4rem', color: 'cornflowerblue'}}></i>
                     </div>
                   </div>
                 </div>
                 <div class="col">
-                <div className="card" style={{ width: "18rem" }}>
+                <div className="card" style={{ width: "26rem", height: "13rem" }}>
                     <div className="card-body">
                       <h5 className="card-title">9</h5>
                       <h6 className="card-subtitle mb-2 text-body-secondary">
                         Phương tiện
                       </h6>
                       <p className="card-text">
-                      <i class="bi bi-bicycle" style={{fontSize: '2rem', color: 'cornflowerblue'}}></i>
+                      <i class="bi bi-bicycle" style={{fontSize: '4rem', color: 'cornflowerblue'}}></i>
                       </p>
                     </div>
                   </div>
