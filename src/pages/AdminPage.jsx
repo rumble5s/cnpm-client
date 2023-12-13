@@ -100,7 +100,7 @@ export const AdminPage = () => {
             <div className="container text-center">
               <div class="row">
                 <div class="col">
-                  <div className="card" style={{ width: "26rem", height: "13rem" }}>
+                  <div className="card" style={{ width: "20rem", height: "13rem" }}>
                     <div className="card-body">
                       <h5 className="card-title">32</h5>
                       <h6 className="card-subtitle mb-2 text-body-secondary">
@@ -111,7 +111,7 @@ export const AdminPage = () => {
                   </div>
                 </div>
                 <div class="col">
-                <div className="card" style={{ width: "26rem", height: "13rem" }}>
+                <div className="card" style={{ width: "20rem", height: "13rem" }}>
                     <div className="card-body">
                       <h5 className="card-title">73</h5>
                       <h6 className="card-subtitle mb-2 text-body-secondary">
@@ -122,7 +122,7 @@ export const AdminPage = () => {
                   </div>
                 </div>
                 <div class="col">
-                <div className="card" style={{ width: "26rem", height: "13rem" }}>
+                <div className="card" style={{ width: "20rem", height: "13rem" }}>
                     <div className="card-body">
                       <h5 className="card-title">9</h5>
                       <h6 className="card-subtitle mb-2 text-body-secondary">
