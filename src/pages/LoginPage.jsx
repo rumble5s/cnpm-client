@@ -4,16 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/LoginForm.css'
+import '../css/Admin.css';
 
 import { HiOutlineKey } from 'react-icons/hi2'
 import { AiOutlineUser } from 'react-icons/ai'
-
-import LayoutImage from '../img/japan-vintage.jpg'
-var sectionStyle = {
-    backgroundImage: `url(${LayoutImage})`,
-    height: `100vh`,
-    
-}
 
 export function LoginPage() {
     const BASE_URL = 'http://127.0.0.1:8000';
@@ -80,9 +74,9 @@ export function LoginPage() {
     return (
         <div className='bg'>
             <div className="Auth-form-container">
-                <div className='support-layout py-2'>
+                <div className='support-layout'>
                     <h6 className='support-title'>Nếu cần hỗ trợ kỹ thuật, vui lòng thực hiện một trong các cách sau: </h6>
-                    <ol className='support-content mr-1 max-w-none space-y-1 text-black list-decimal list-inside dark:text-gray-400 px-2 py-2'>
+                    <ol className='support-content'>
                         <li>Gửi mail cho phòng kỹ thuật <strong style={{ color: 'red' }}>phongkythuat@gmail.com</strong></li>
                         <li>Gọi số Hotline của phòng kỹ thuật <strong style={{ color: 'red' }}>012345678</strong></li>
                     </ol>
@@ -124,7 +118,7 @@ export function LoginPage() {
                             </div>
                         </div>
                         <div className="d-grid gap-2 mt-3">
-                            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                            <button type="submit" className="btn btn-primary">
                                 Đăng nhập
                             </button>
                         </div>
