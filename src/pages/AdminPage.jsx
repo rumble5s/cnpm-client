@@ -1,9 +1,43 @@
 import React from "react";
 import { ReactDOM } from "react";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Admin.css";
 
+import { FaHome } from "react-icons/fa";
+import { MdOutlineFamilyRestroom } from "react-icons/md";
+import { FaBuilding } from "react-icons/fa6";
+import { MdOutlineCreditCard } from "react-icons/md";
+import { RiComputerFill } from "react-icons/ri";
+import { RiMotorbikeFill } from "react-icons/ri";
+
+//Chart:
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
+import { Data } from "../Data";
+import { Line } from "react-chartjs-2";
+
 export const AdminPage = () => {
+  // const[userData, setUserData] = useState(
+  //   {
+  //     labels: Data.map((data) => data.year),
+  //     datasets: [
+  //       {
+  //         label: "Users Gained ",
+  //         data: Data.map((data) => data.userGain),
+  //         backgroundColor: [
+  //           "rgba(75,192,192,1)",
+  //           "#ecf0f1",
+  //           "#50AF95",
+  //           "#f3ba2f",
+  //           "#2a71d0"
+  //         ],
+  //         borderColor: "black",
+  //         borderWidth: 2
+  //       }
+  //     ]
+  //   }
+  // )
   return (
     <div className="bg">
       <div className="wrapper">
@@ -18,32 +52,38 @@ export const AdminPage = () => {
             <ul className="sidebar-nav">
               <li className="sidebar-item">
                 <a href="#" className="sidebar-link">
+                  <FaHome className="icon-sidebar" />
                   Trang chủ
                 </a>
               </li>
               <li className="sidebar-item">
                 <a href="#" className="sidebar-link">
+                  <FaBuilding className="icon-sidebar" />
                   Danh sách căn hộ
                 </a>
               </li>
 
               <li className="sidebar-item">
                 <a href="#" className="sidebar-link">
-                  Danh sách hộ gia đình
+                  <MdOutlineFamilyRestroom className="icon-sidebar" />
+                  Hộ gia đình
                 </a>
               </li>
               <li className="sidebar-item">
                 <a href="#" className="sidebar-link">
+                  <MdOutlineCreditCard className="icon-sidebar" />
                   Thông tin thu phí
                 </a>
               </li>
               <li className="sidebar-item">
                 <a href="#" className="sidebar-link">
+                  <RiComputerFill className="icon-sidebar" />
                   Danh sách đăng ký
                 </a>
               </li>
               <li className="sidebar-item">
                 <a href="#" className="sidebar-link">
+                  <RiMotorbikeFill className="icon-sidebar" />
                   Phí trông xe
                 </a>
               </li>
@@ -156,66 +196,52 @@ export const AdminPage = () => {
                   </div>
                 </div>
               </div>
-              <div class="col-lg-7">
-                <div class="card z-index-2">
-                  <div class="card-header pb-0">
-                    <h6>Sales overview</h6>
-                    <p class="text-sm">
-                      <i class="fa fa-arrow-up text-success"></i>
-                      <span class="font-weight-bold">4% more</span> in 2021
-                    </p>
+              <div>
+                <div className="card shadow" style={{width: "70rems"}}>
+                  <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-primary">
+                      Bar Chart
+                    </h6>
                   </div>
-                  <div class="card-body p-3">
-                    <div class="chart">
-                      <canvas
-                        id="chart-line"
-                        class="chart-canvas"
-                        height="300"
-                      ></canvas>
+                  <div className="card-body">
+                    <div className="chart-area">
+                      <Line
+                        data={{
+                          labels: Data.map((data) => data.label),
+                          datasets: [
+                            {
+                              label: "Count",
+                              data: Data.map((data) => data.value),
+                              backgroundColor: [
+                                "rgba(75,192,192,1)",
+                                "#ecf0f1",
+                                "#50AF95",
+                                "#f3ba2f",
+                                "#2a71d0",
+                              ],
+                              borderColor: "black",
+                              borderWidth: 2,
+                            },
+                          ],
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
+                {/* <div className="card shadow mb-4">
+                  <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-primary">
+                      Bar Chart
+                    </h6>
+                  </div>
+                  <div className="card-body">
+                    <div className="chart-bar">
+                      <canvas id="myBarChart" />
+                    </div>
+                  </div>
+                </div> */}
+                </div>
               </div>
-              {/* Table Element */}
-              {/* <div className="card border-0">
-                <div className="card-header">
-                  <h5 className="card-title" style={{ fontSize: "1.25rem" }}>
-                    Thống kê
-                  </h5>
-                </div>
-                <div className="card-body">
-                  <table className="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colSpan={2}>Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div> */}
-            </div>
           </main>
           <a href="#" className="theme-toggle">
             <i className="fa-regular fa-moon" />
