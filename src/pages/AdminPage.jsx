@@ -197,15 +197,16 @@ export const AdminPage = () => {
                 </div>
               </div>
               <div>
-                <div className="card shadow" style={{width: "70rems"}}>
+                <div className="card shadow" style={{width: "70rem", height: "25rem"}}>
                   <div className="card-header py-3">
                     <h6 className="m-0 font-weight-bold text-primary">
-                      Bar Chart
+                      Doanh thu chung cư (2050)
                     </h6>
                   </div>
                   <div className="card-body">
                     <div className="chart-area">
                       <Line
+                      options={{ maintainAspectRatio: false }}
                         data={{
                           labels: Data.map((data) => data.label),
                           datasets: [
@@ -221,6 +222,7 @@ export const AdminPage = () => {
                               ],
                               borderColor: "black",
                               borderWidth: 2,
+                              
                             },
                           ],
                         }}
