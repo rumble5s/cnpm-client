@@ -7,7 +7,7 @@ const App = () => {
     return (
         <HashRouter>    
             <Routes>
-                <Route path="/" element={<MainPage/>}/>
+                <Route path="/" element={<LoginPage/>}/>
                 <Route path="/admin" element={<AdminPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
             </Routes>
