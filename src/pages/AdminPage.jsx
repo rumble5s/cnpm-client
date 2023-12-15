@@ -39,7 +39,6 @@ export const AdminPage = () => {
   //   }
   // )
   return (
-    <div className="bg">
       <div className="wrapper">
         <aside id="sidebar" className="js-sidebar">
           {/* Content For Sidebar */}
@@ -52,8 +51,11 @@ export const AdminPage = () => {
             <ul className="sidebar-nav">
               <li className="sidebar-item">
                 <a href="#" className="sidebar-link">
+                  
+                  <button className='btn btn-light current-site'>
                   <FaHome className="icon-sidebar" />
-                  Trang chủ
+                    Trang chủ
+                  </button>
                 </a>
               </li>
               <li className="sidebar-item">
@@ -181,7 +183,7 @@ export const AdminPage = () => {
                               </strong>
                             </div>
                             <div class="h3 mb-0 font-weight-bold text-gray-800">
-                              1,000 M VND
+                              1,000 Tr VND
                             </div>
                           </div>
                           <div class="col-auto">
@@ -211,7 +213,7 @@ export const AdminPage = () => {
                           labels: Data.map((data) => data.label),
                           datasets: [
                             {
-                              label: "Count",
+                              label: "Đơn vị: Triệu VND",
                               data: Data.map((data) => data.value),
                               backgroundColor: [
                                 "rgba(75,192,192,1)",
@@ -251,6 +253,5 @@ export const AdminPage = () => {
           </a>
         </div>
       </div>
-    </div>
   );
 };

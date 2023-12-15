@@ -66,7 +66,7 @@ h4 {
 #sidebar {
   max-width: 264px;
   min-width: 264px;
-  background: var(--bs-black);
+  background-color: #4e73df;
   transition: all 0.35s ease-in-out;
 }
 
@@ -133,6 +133,10 @@ a.sidebar-link {
   transform: rotate(45deg);
   transition: all 0.2s ease-out;
 }
+
+/* .sidebar-item {
+  ccolor: rgba(255, 255, 255, 0.8);
+} */
 
 .avatar {
   height: 40px;
@@ -251,6 +255,10 @@ a.sidebar-link {
 
 .header-size {
   width: 12%;
+}
+
+.current-site {
+  font-size: 1.25rem;
 }
 
 .chart-area {
