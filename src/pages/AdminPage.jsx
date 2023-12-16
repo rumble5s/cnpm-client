@@ -178,8 +178,8 @@ export const AdminPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-8 col-lg-7">
-              <div className="card shadow mb-4">
+            <div>
+              <div className="card shadow mb-4" style={{width: "70rem", height: "25rem"}}>
                 <div className="card-header py-3">
                   <h6 className="m-0 font-weight-bold text-primary">
                     Doanh thu chung cư (2050)
