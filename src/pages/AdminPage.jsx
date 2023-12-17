@@ -1,4 +1,5 @@
-import React from "react";
+import axios from 'axios';
+import React, { useEffect } from "react";
 import { ReactDOM } from "react";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,26 +19,39 @@ import { Data } from "../Data";
 import { Line } from "react-chartjs-2";
 
 export const AdminPage = () => {
-  // const[userData, setUserData] = useState(
-  //   {
-  //     labels: Data.map((data) => data.year),
-  //     datasets: [
-  //       {
-  //         label: "Users Gained ",
-  //         data: Data.map((data) => data.userGain),
-  //         backgroundColor: [
-  //           "rgba(75,192,192,1)",
-  //           "#ecf0f1",
-  //           "#50AF95",
-  //           "#f3ba2f",
-  //           "#2a71d0"
-  //         ],
-  //         borderColor: "black",
-  //         borderWidth: 2
-  //       }
-  //     ]
-  //   }
-  // )
+  const BASE_URL = 'http://localhost:8000';
+  const groupid = "ed9d6909-152e-492e-aa0d-a7bd47a8ee30";
+  const [transports, setTransports] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios({
+            method: 'POST',
+            url: BASE_URL + '/get_transports/',
+            data: {
+                group_id: groupid
+            }
+        });
+
+        if(response.data.error)
+            alert(response.data.error);
+        else {
+            setTransports(response.data.transports);
+        }
+      } catch (error) {
+          alert(error.response.data);
+          alert("Can\'t connect to server");
+      }
+    }
+    fetchData();
+    return () => {
+      console.log('refresh');
+    }
+  }, []);
+
+  console.log(transports);
+
   return (
       <div className="wrapper">
         <aside id="sidebar" className="js-sidebar">
@@ -156,7 +170,7 @@ export const AdminPage = () => {
                               <strong>Phương tiện</strong>
                             </div>
                             <div class="h2 mb-0 font-weight-bold text-gray-800">
-                              350
+                              {transports.length}
                             </div>
                           </div>
                           <div class="col-auto">
