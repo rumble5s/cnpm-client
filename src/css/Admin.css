@@ -66,7 +66,7 @@ h4 {
 #sidebar {
   max-width: 264px;
   min-width: 264px;
-  background-color: #4e73df;
+  background-color: black;
   transition: all 0.35s ease-in-out;
 }
 
@@ -75,7 +75,7 @@ h4 {
   flex-direction: column;
   min-height: 100vh;
   min-width: 0;
-  overflow: hidden;
+  overflow: auto;
   transition: all 0.35s ease-in-out;
   width: 100%;
   background-color: #f3f1f1;
@@ -108,7 +108,7 @@ h4 {
   padding: 1.5rem 1.5rem 0.375rem;
 }
 
-a.sidebar-link {
+.sidebar-link {
   padding: 0.625rem 1.625rem;
   color: #e9ecef;
   position: relative;
@@ -153,6 +153,10 @@ a.sidebar-link {
   width: 100vw;
 }
 
+.list-chart {
+  display: flex
+}
+
 @media (min-width: 768px) {
   .content {
     max-width: auto;
@@ -190,6 +194,28 @@ a.sidebar-link {
 
 .card-text:last-child {
   margin-bottom: 0;
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #f8f9fc;
+  border-bottom: 1px solid #e3e6f0;
+}
+
+.card-header:first-child {
+  border-radius: calc(0.35rem - 1px) calc(0.35rem - 1px) 0 0;
+}
+
+.card > .card-header + .list-group,
+.card > .list-group + .card-footer {
+  border-top: 0;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
 }
 
 .border-left-primary {
@@ -297,3 +323,4 @@ html[data-bs-theme="dark"] .theme-toggle .fa-moon {
 html[data-bs-theme="light"] .theme-toggle .fa-sun {
   display: none;
 }
+
