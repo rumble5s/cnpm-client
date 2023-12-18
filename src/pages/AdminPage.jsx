@@ -26,49 +26,47 @@ export const AdminPage = () => {
         {/* Content For Sidebar */}
         <div className="h-100">
           <div className="sidebar-logo">
-            <a className="text-center" href="#">
+            <a className="text-center" to="/admin">
               Admin
             </a>
           </div>
           <ul className="sidebar-nav">
             <li className="sidebar-item">
-              <Link className="sidebar_link" to="/admin">
-                <button className="btn btn-light current-site">
+              <Link className="link-secondary sidebar-link current-site" to="/admin">
                   <FaHome className="icon-sidebar" />
                   Trang chủ
-                </button>
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="sidebar-link" to="/department">
+              <Link className="link-secondary sidebar-link" to="/department">
                 <FaBuilding className="icon-sidebar" />
                 Danh sách căn hộ
               </Link>
             </li>
 
             <li className="sidebar-item">
-              <a href="#" className="sidebar-link">
+              <Link className="link-secondary sidebar-link">
                 <MdOutlineFamilyRestroom className="icon-sidebar" />
                 Hộ gia đình
-              </a>
+              </Link>
             </li>
             <li className="sidebar-item">
-              <a href="#" className="sidebar-link">
+              <Link className="link-secondary sidebar-link">
                 <MdOutlineCreditCard className="icon-sidebar" />
                 Thông tin thu phí
-              </a>
+              </Link>
             </li>
             <li className="sidebar-item">
-              <a href="#" className="sidebar-link">
+              <Link className="link-secondary sidebar-link">
                 <RiComputerFill className="icon-sidebar" />
                 Danh sách đăng ký
-              </a>
+              </Link>
             </li>
             <li className="sidebar-item">
-              <a href="#" className="sidebar-link">
+              <Link className="link-secondary sidebar-link">
                 <RiMotorbikeFill className="icon-sidebar" />
                 Phí trông xe
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
