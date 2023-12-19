@@ -30,8 +30,17 @@ import { DepartmentData } from "../components/DepartmentData";
 
 export const Department = () => {
   const BASE_URL = "http://localhost:8000";
-  const [rooms, setRooms] = useState([{}]);
+  const [rooms, setRooms] = useState([]);
   const [auth, setAuth] = useState("");
+
+  const [dummy, setDummy] = useState(true);
+
+  const [id, setId] = useState('');
+  const [name, setName] = useState('');
+  const [area, setArea] = useState('');
+  const [price, setPrice] = useState('');
+
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem("isadmin")).isadmin;
@@ -57,7 +66,87 @@ export const Department = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [dummy]);
+
+  useEffect(() => {
+
+  }, [filter]);
+
+  const submitDelete = () => {
+    // console.log(typeof (room_id));
+
+    const submit = async () => {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: BASE_URL + "/admin_delete_room/",
+          data: {
+            auth: auth,
+            room_id: id
+          }
+        });
+        console.log(response.data);
+      } catch (error) {
+        alert("Delete Failed!");
+      }
+    }
+    submit();
+    setDummy(dummy ^ 1);
+  };
+
+  const updateState = (id, name, area, price) => {
+    setId(id);
+    setName(name);
+    setArea(area);
+    setPrice(price);
+  }
+
+  const submitChange = (e) => {
+    const submit = async () => {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: BASE_URL + "/admin_edit_room/",
+          data: {
+            auth: auth,
+            room_id: id,
+            name: name,
+            area: area,
+            price: price,
+            description: "This room was editted"
+          }
+        });
+        // console.log(response.data);
+      } catch (error) {
+        alert("Edit Failed!");
+      }
+    }
+    submit();
+    setDummy(dummy ^ 1);
+  };
+
+  const submitAdd = (e) => {
+    const submit = async () => {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: BASE_URL + "/admin_create_room/",
+          data: {
+            auth: auth,
+            name: name,
+            area: area,
+            price: price,
+            description: "This room was added"
+          }
+        });
+        console.log(response.data);
+      } catch (error) {
+        alert("Add Failed!");
+      }
+    }
+    submit();
+    setDummy(dummy ^ 1);
+  };
 
   const index = 0;
 
@@ -119,27 +208,77 @@ export const Department = () => {
         <main className="content px-3 py-4 pb-4">
           <h1>
             <strong>Danh sách căn hộ</strong>
-            <form class="d-flex">
+            <form className="d-flex">
               <input
-                class="form-control me-2"
+                className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Tìm kiếm số phòng"
                 aria-label="Search"
+                onChange={(e) => setFilter(e.target.value)}
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
             </form>
           </h1>
-          <button type="button" className="btn-primary rounded-pill">
-            {" "}
+          <button type="button" className="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#addRoom" onClick={() => updateState('','','','')}>
+            <strong>Thêm căn hộ </strong>
             <FaPlus
               style={{
                 fontSize: "1.25rem",
                 color: "black",
               }}
-            />{" "}
+            />
           </button>
+          <div className="modal fade" id="addRoom" aria-labelledby="addRoom" aria-hidden="true" tabIndex={-1} role="dialog">
+            <div className="modal-dialog modal-lg">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel"><strong>Thêm căn hộ</strong> </h5>
+                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                  <form onSubmit={submitAdd}>
+                    <div className="form-group mt-3">
+                      <div className="col-xs-2">
+                        <label>Số phòng</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="175"
+                          onChange={(e) => setName(e.target.value)}
+                        />
+                      </div>
+                      <div className="col-xs-3">
+                        <label>Diện tích (m2)</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="100.00"
+                          onChange={(e) => setArea(e.target.value)}
+                        />
+                      </div>
+                      <div className="col-xs-4">
+                        <label>Giá dịch vụ hàng tháng <br /> (không bao gồm điện, nước)</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="250000"
+                          onChange={(e) => setPrice(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="modal-footer">
+                      <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ backgroundColor: "red" }}>Hủy</button>
+                      <button type="submit" className="btn btn-primary" data-bs-dismiss="modal" style={{ backgroundColor: "green" }}> Xác nhận </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <TableContainer component={Paper}>
             <Table
               sx={{ minWidth: 650 }}
@@ -180,7 +319,7 @@ export const Department = () => {
                 </TableRow>
               </TableHead>
               <TableBody style={{ width: "100%" }}>
-                {rooms.map((room, index) => (
+                {rooms.filter((room) => room.name.startsWith(filter)).map((room, index) => (
                   <TableRow
                     key={room.id}
                     style={{ fontSize: "1rem", padding: "10px" }}
@@ -214,17 +353,85 @@ export const Department = () => {
                       style={{ fontSize: "1.2rem", padding: "10px" }}
                     >
                       <div>
-                        <a>
+                        <a data-bs-toggle="modal" data-bs-target="#confirmDelete" onClick={() => updateState(room.id,'','','')}>
                           <FaTrashAlt
                             style={{ fontSize: "1.5rem", color: "#E32929" }}
                             className="delete-row"
                           />
                         </a>
-                        <a>
+
+                        <div className="modal fade" id="confirmDelete" aria-labelledby="confirmDelete" aria-hidden="true" tabIndex={-1} role="dialog">
+                          <div className="modal-dialog modal-sm">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalLabel"><strong>Xác nhận xóa phòng</strong> </h5>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              {/* <div className="modal-body">
+                                Ấn nút <button type="button" className="btn btn-primary" style={{ backgroundColor: "red" }}> Xóa phòng </button> bên dưới để xác nhận.
+                              </div> */}
+                              <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" style={{ backgroundColor: "red" }} onClick={() => submitDelete()}> Xóa phòng </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a data-bs-toggle="modal" data-bs-target="#changeRoom" onClick={() => updateState(room.id, room.name, room.area, room.price)}>
                           <FaEdit
                             style={{ fontSize: "1.5rem", color: "#17a2b8" }}
                           />
                         </a>
+
+                        <div className="modal fade" id="changeRoom" aria-labelledby="changeRoom" aria-hidden="true" tabIndex={-1} role="dialog">
+                          <div className="modal-dialog modal-lg">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalLabel"><strong>Thay đổi thông tin phòng</strong> </h5>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div className="modal-body">
+                                <form onSubmit={submitChange}>
+                                  <div className="form-group mt-3">
+                                    <div className="col-xs-2">
+                                      <label>Số phòng</label>
+                                      <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                      />
+                                    </div>
+                                    <div className="col-xs-3">
+                                      <label>Diện tích (m2)</label>
+                                      <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder={area}
+                                        onChange={(e) => setArea(e.target.value)}
+                                      />
+                                    </div>
+                                    <div className="col-xs-4">
+                                      <label>Giá dịch vụ hàng tháng <br /> (không bao gồm điện, nước)</label>
+                                      <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder={price}
+                                        onChange={(e) => setPrice(e.target.value)}
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ backgroundColor: "red" }}>Hủy</button>
+                                    <button type="submit" className="btn btn-primary" data-bs-dismiss="modal" style={{ backgroundColor: "green" }}> Xác nhận </button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
                     </TableCell>
                   </TableRow>
