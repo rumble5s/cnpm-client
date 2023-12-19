@@ -1,4 +1,4 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { ReactDOM } from "react";
 import { Link } from "react-router-dom";
@@ -14,10 +14,11 @@ import { RiComputerFill } from "react-icons/ri";
 import { RiMotorbikeFill } from "react-icons/ri";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 
 //Table
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -130,22 +131,45 @@ export const Department = () => {
               </button>
             </form>
           </h1>
+          <button type="button" className="btn-primary rounded-pill">
+            {" "}
+            <FaPlus
+              style={{
+                fontSize: "1.25rem",
+                color: "black",
+              }}
+            />{" "}
+          </button>
           <TableContainer component={Paper}>
             <Table
-              sx={{ minWidth: 650}} size="small" aria-label="a dense table"
+              sx={{ minWidth: 650 }}
+              size="small"
+              aria-label="a dense table"
             >
               <TableHead>
                 <TableRow>
-                  <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
+                  <TableCell
+                    align="left"
+                    style={{ fontSize: "1.2rem", padding: "10px" }}
+                  >
                     <strong>#</strong>
                   </TableCell>
-                  <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
+                  <TableCell
+                    align="left"
+                    style={{ fontSize: "1.2rem", padding: "10px" }}
+                  >
                     <strong>Số phòng</strong>
                   </TableCell>
-                  <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
+                  <TableCell
+                    align="left"
+                    style={{ fontSize: "1.2rem", padding: "10px" }}
+                  >
                     <strong>Diện tích (m2)</strong>
                   </TableCell>
-                  <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
+                  <TableCell
+                    align="left"
+                    style={{ fontSize: "1.2rem", padding: "10px" }}
+                  >
                     <strong>
                       Giá dịch vụ hàng tháng
                       <br /> (không bao gồm điện, nước)
@@ -161,11 +185,34 @@ export const Department = () => {
                     key={room.id}
                     style={{ fontSize: "1rem", padding: "10px" }}
                   >
-                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>{index + 1}</TableCell>
-                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>{room.name}</TableCell>
-                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>{room.area}</TableCell>
-                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>{room.price}</TableCell>
-                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
+                    <TableCell
+                      align="left"
+                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                    >
+                      {index + 1}
+                    </TableCell>
+                    <TableCell
+                      align="left"
+                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                    >
+                      {room.name}
+                    </TableCell>
+                    <TableCell
+                      align="left"
+                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                    >
+                      {room.area}
+                    </TableCell>
+                    <TableCell
+                      align="left"
+                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                    >
+                      {room.price}
+                    </TableCell>
+                    <TableCell
+                      align="left"
+                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                    >
                       <div>
                         <a>
                           <FaTrashAlt
@@ -185,7 +232,6 @@ export const Department = () => {
               </TableBody>
             </Table>
           </TableContainer>
-          
         </main>
         <a href="#" className="theme-toggle">
           <i className="fa-regular fa-moon" />
