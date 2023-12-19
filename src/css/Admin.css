@@ -310,7 +310,6 @@ h4 {
   left: auto;
   border: none;
   background-color: var(--bs-body-color);
-}
 
 html[data-bs-theme="dark"] .theme-toggle .fa-sun,
 html[data-bs-theme="light"] .theme-toggle .fa-moon {

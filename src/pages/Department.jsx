@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import axios from "axios";
 import { ReactDOM } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Admin.css";
-
 
 import { FaHome } from "react-icons/fa";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
@@ -17,6 +16,8 @@ import { FaTrashAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 
 //Table
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -114,28 +115,37 @@ export const Department = () => {
         </div>
       </aside>
       <div className="main">
-        <main className="content px-3 py-2">
-          <h2>
+        <main className="content px-3 py-4 pb-4">
+          <h1>
             <strong>Danh sách căn hộ</strong>
             <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-          </h2>
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </h1>
           <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table
+              sx={{ minWidth: 650}} size="small" aria-label="a dense table"
+            >
               <TableHead>
                 <TableRow>
-                  <TableCell align="left">
+                  <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
                     <strong>#</strong>
                   </TableCell>
-                  <TableCell align="left">
+                  <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
                     <strong>Số phòng</strong>
                   </TableCell>
-                  <TableCell align="left">
+                  <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
                     <strong>Diện tích (m2)</strong>
                   </TableCell>
-                  <TableCell align="left">
+                  <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
                     <strong>
                       Giá dịch vụ hàng tháng
                       <br /> (không bao gồm điện, nước)
@@ -145,31 +155,37 @@ export const Department = () => {
                   <TableCell align="left"></TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody style={{ width: '100%' }}>
+              <TableBody style={{ width: "100%" }}>
                 {rooms.map((room, index) => (
                   <TableRow
                     key={room.id}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                    style={{ fontSize: "1rem", padding: "10px" }}
                   >
-                    <TableCell align="left">{index + 1}</TableCell>
-                    <TableCell align="left">{room.name}</TableCell>
-                    <TableCell align="left">{room.area}</TableCell>
-                    <TableCell align="left">{room.price}</TableCell>
-                    <TableCell align="left">
-                    <div>
-                      <a>
-                        <FaTrashAlt style={{ fontSize: "1.5rem", color: "#E32929"}} className="delete-row"/>
-                      </a>
-                      <a>
-                        <FaEdit style={{ fontSize: "1.5rem", color: "#17a2b8" }}/>
-                      </a>
-                    </div>
+                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>{index + 1}</TableCell>
+                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>{room.name}</TableCell>
+                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>{room.area}</TableCell>
+                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>{room.price}</TableCell>
+                    <TableCell align="left" style={{ fontSize: "1.2rem", padding: "10px" }}>
+                      <div>
+                        <a>
+                          <FaTrashAlt
+                            style={{ fontSize: "1.5rem", color: "#E32929" }}
+                            className="delete-row"
+                          />
+                        </a>
+                        <a>
+                          <FaEdit
+                            style={{ fontSize: "1.5rem", color: "#17a2b8" }}
+                          />
+                        </a>
+                      </div>
                     </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
+          
         </main>
         <a href="#" className="theme-toggle">
           <i className="fa-regular fa-moon" />

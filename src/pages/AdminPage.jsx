@@ -74,7 +74,7 @@ export const AdminPage = () => {
       <div className="main">
         <main className="content px-3 py-2">
           <div className="container-fluid">
-            <h4 className="block-item">Thống kê</h4>
+            <h1 className="content block-item"><strong>Thống kê</strong></h1>
             <div className="container text-center">
               <div class="row">
                 <div class="col-xl-3 col-md-6 mb-4">
