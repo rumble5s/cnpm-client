@@ -66,7 +66,14 @@ h4 {
 #sidebar {
   max-width: 264px;
   min-width: 264px;
-  background-color: #C2E6E8;
+  background-color: #FFB600;
+  transition: all 0.35s ease-in-out;
+}
+
+#sidebar.user {
+  max-width: 264px;
+  min-width: 264px;
+  background-color: cyan;
   transition: all 0.35s ease-in-out;
 }
 
@@ -310,6 +317,15 @@ h4 {
   left: auto;
   border: none;
   background-color: var(--bs-body-color);
+}
+
+.add-department {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.table-parking {
+  size: ;
+}
 
 html[data-bs-theme="dark"] .theme-toggle .fa-sun,
 html[data-bs-theme="light"] .theme-toggle .fa-moon {

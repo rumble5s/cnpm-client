@@ -45,25 +45,25 @@ export const AdminPage = () => {
             </li>
 
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link">
+              <Link className="link-secondary sidebar-link" to="/room">
                 <MdOutlineFamilyRestroom className="icon-sidebar" />
                 Hộ gia đình
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link">
+              <Link className="link-secondary sidebar-link" to="/bill">
                 <MdOutlineCreditCard className="icon-sidebar" />
                 Thông tin thu phí
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link">
+              <Link className="link-secondary sidebar-link" to="/register">
                 <RiComputerFill className="icon-sidebar" />
                 Danh sách đăng ký
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link">
+              <Link className="link-secondary sidebar-link" to="/parking">
                 <RiMotorbikeFill className="icon-sidebar" />
                 Phí trông xe
               </Link>

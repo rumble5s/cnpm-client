@@ -15,18 +15,35 @@ import { RiMotorbikeFill } from "react-icons/ri";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 //Table
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { DepartmentData } from "../components/DepartmentData";
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 20,
+  },
+}));
 
 export const Department = () => {
   const BASE_URL = "http://localhost:8000";
@@ -178,25 +195,25 @@ export const Department = () => {
             </li>
 
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link">
+              <Link className="link-secondary sidebar-link" to="/room">
                 <MdOutlineFamilyRestroom className="icon-sidebar" />
                 Hộ gia đình
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link">
+              <Link className="link-secondary sidebar-link" to="/bill">
                 <MdOutlineCreditCard className="icon-sidebar" />
                 Thông tin thu phí
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link">
+              <Link className="link-secondary sidebar-link" to="/register">
                 <RiComputerFill className="icon-sidebar" />
                 Danh sách đăng ký
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link">
+              <Link className="link-secondary sidebar-link" to="/parking">
                 <RiMotorbikeFill className="icon-sidebar" />
                 Phí trông xe
               </Link>
@@ -212,15 +229,15 @@ export const Department = () => {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Tìm kiếm số phòng"
+                placeholder="Tìm kiếm số phòng🔎"
                 aria-label="Search"
                 onChange={(e) => setFilter(e.target.value)}
               />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
+              {' '}
+              <FaSearch size={35}/>
             </form>
           </h1>
+          <div className="add-department">
           <button type="button" className="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#addRoom" onClick={() => updateState('','','','')}>
             <strong>Thêm căn hộ </strong>
             <FaPlus
@@ -230,6 +247,7 @@ export const Department = () => {
               }}
             />
           </button>
+          </div>
           <div className="modal fade" id="addRoom" aria-labelledby="addRoom" aria-hidden="true" tabIndex={-1} role="dialog">
             <div className="modal-dialog modal-lg">
               <div className="modal-content">
@@ -278,7 +296,6 @@ export const Department = () => {
             </div>
           </div>
 
-
           <TableContainer component={Paper}>
             <Table
               sx={{ minWidth: 650 }}
@@ -286,71 +303,71 @@ export const Department = () => {
               aria-label="a dense table"
             >
               <TableHead>
-                <TableRow>
-                  <TableCell
+                <StyledTableRow>
+                  <StyledTableCell
                     align="left"
-                    style={{ fontSize: "1.2rem", padding: "10px" }}
+                    style={{ fontSize: "0.9rem", padding: "10px" }}
                   >
                     <strong>#</strong>
-                  </TableCell>
-                  <TableCell
+                  </StyledTableCell>
+                  <StyledTableCell
                     align="left"
-                    style={{ fontSize: "1.2rem", padding: "10px" }}
+                    style={{ fontSize: "0.9rem", padding: "10px" }} 
                   >
                     <strong>Số phòng</strong>
-                  </TableCell>
-                  <TableCell
+                  </StyledTableCell>
+                  <StyledTableCell
                     align="left"
-                    style={{ fontSize: "1.2rem", padding: "10px" }}
+                    style={{ fontSize: "0.9rem", padding: "10px" }}
                   >
                     <strong>Diện tích (m2)</strong>
-                  </TableCell>
-                  <TableCell
+                  </StyledTableCell>
+                  <StyledTableCell
                     align="left"
-                    style={{ fontSize: "1.2rem", padding: "10px" }}
+                    style={{ fontSize: "0.9rem", padding: "10px" }}
                   >
                     <strong>
                       Giá dịch vụ hàng tháng
                       <br /> (không bao gồm điện, nước)
                     </strong>
-                  </TableCell>
-                  <TableCell align="right"></TableCell>
-                  <TableCell align="left"></TableCell>
-                </TableRow>
+                  </StyledTableCell>
+                  <StyledTableCell align="right"></StyledTableCell>
+                  <StyledTableCell align="left"></StyledTableCell>
+                </StyledTableRow>
               </TableHead>
               <TableBody style={{ width: "100%" }}>
                 {rooms.filter((room) => room.name.startsWith(filter)).map((room, index) => (
-                  <TableRow
+                  <StyledTableRow
                     key={room.id}
                     style={{ fontSize: "1rem", padding: "10px" }}
                   >
-                    <TableCell
+                    <StyledTableCell
                       align="left"
-                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                      style={{ fontSize: "0.9rem", padding: "10px" }}
                     >
                       {index + 1}
-                    </TableCell>
-                    <TableCell
+                    </StyledTableCell>
+                    <StyledTableCell
                       align="left"
-                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                      style={{ fontSize: "0.9rem", padding: "10px" }}
                     >
                       {room.name}
-                    </TableCell>
-                    <TableCell
+                    </StyledTableCell>
+                    <StyledTableCell
                       align="left"
-                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                      style={{ fontSize: "0.9rem", padding: "10px" }}
                     >
                       {room.area}
-                    </TableCell>
-                    <TableCell
+                    </StyledTableCell>
+                    <StyledTableCell
                       align="left"
-                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                      style={{ fontSize: "0.9rem", padding: "10px" }}
                     >
                       {room.price}
-                    </TableCell>
-                    <TableCell
+                    </StyledTableCell>
+                    <StyledTableCell
                       align="left"
-                      style={{ fontSize: "1.2rem", padding: "10px" }}
+                      style={{ fontSize: "0.9rem", padding: "10px" }}
                     >
                       <div>
                         <a data-bs-toggle="modal" data-bs-target="#confirmDelete" onClick={() => updateState(room.id,'','','')}>
@@ -433,17 +450,15 @@ export const Department = () => {
                         </div>
 
                       </div>
-                    </TableCell>
-                  </TableRow>
+                    </StyledTableCell>
+                  </StyledTableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
+
+          
         </main>
-        <a href="#" className="theme-toggle">
-          <i className="fa-regular fa-moon" />
-          <i className="fa-regular fa-sun" />
-        </a>
       </div>
     </div>
   );
