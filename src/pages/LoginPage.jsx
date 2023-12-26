@@ -38,7 +38,7 @@ export function LoginPage() {
             else {
                 const group_id = response.data.group_id;
                 localStorage.setItem('groupid', JSON.stringify({ group_id }));
-                navigate("/");
+                navigate("/user");
             }
 
         } catch (error) {
