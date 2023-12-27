@@ -87,13 +87,16 @@ export const Family = () => {
     fetchData();
   }, [dummy]);
 
-  const updateState = (id, cic, name, dob, phone, email) => {
+  const updateState = (id, cic, name, dob, phone, email, formName) => {
     setPid(id);
     setPcic(cic);
     setPname(name);
     setPdob(dob);
     setPphone(phone);
     setPemail(email);
+    
+    if(formName != '')
+      document.getElementById(formName).reset();
   };
 
   const submitAdd = (e) => {
@@ -120,6 +123,56 @@ export const Family = () => {
     submit();
     setDummy(dummy ^ 1);
   };
+
+  const submitDelete = () => {
+    const submit = async () => {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: BASE_URL + "/delete_person/",
+          data: {
+            person_id: pid
+          }
+        });
+        console.log(response.data);
+      } catch (error) {
+        alert("Delete User Failed!");
+      }
+    }
+    submit();
+    setDummy(dummy ^ 1);
+  };
+
+  const submitChange = (e) => {
+    const formData = new FormData();
+
+    formData.append('name', pname);
+    formData.append('citizen_identification_card', pcic);
+    formData.append('date_of_birth', pdob);
+    formData.append('phone', pphone);
+    formData.append('email', pemail);
+    formData.append('person_id', pid);
+    const submit = async () => {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: BASE_URL + "/edit_person/",
+          data: formData,
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+        console.log(response.data);
+      } catch (error) {
+        alert("Edit User Failed!");
+      }
+    }
+    submit();
+    setDummy(dummy ^ 1);
+    e.target.reset();
+  };
+
+  // $('#myModal').on('hidden.bs.modal', function () {
+  //     $('#myModal form')[0].reset();
+  // });
 
   return (
     <div className="wrapper">
@@ -167,7 +220,7 @@ export const Family = () => {
           </h1>
 
           <div className="add-department">
-            <button type="button" className="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#addPerson" onClick={() => updateState('', '', '', '', '', '')}>
+            <button type="button" className="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#addPerson" onClick={() => updateState('', '', '', '', '', '', "addForm")}>
               <strong>Thêm thành viên </strong>
               <FaPlus
                 style={{
@@ -185,7 +238,7 @@ export const Family = () => {
                   <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
-                  <form onSubmit={submitAdd}>
+                  <form id="addForm" onSubmit={submitAdd}>
                     <div className="form-group mt-3">
                       <div className="col">
                         <label>Tên</label>
@@ -228,7 +281,7 @@ export const Family = () => {
                         <input
                           type="text"
                           className="form-control"
-                          placeholder="0123202326"
+                          placeholder="abcxyz@gmail.com"
                           onChange={(e) => setPemail(e.target.value)}
                         />
                       </div>
@@ -345,7 +398,7 @@ export const Family = () => {
                     >
                       <div>
                         <a
-                        // data-bs-toggle="modal" data-bs-target="#confirmDelete" onClick={() => updateState(room.id,'','','')}
+                          data-bs-toggle="modal" data-bs-target="#confirmDelete" onClick={() => updateState(person.id,'',person.name,'','','','')}
                         >
                           <FaTrashAlt
                             style={{ fontSize: "1.5rem", color: "#E32929" }}
@@ -353,67 +406,85 @@ export const Family = () => {
                           />
                         </a>
 
-                        {/* <div className="modal fade" id="confirmDelete" aria-labelledby="confirmDelete" aria-hidden="true" tabIndex={-1} role="dialog">
+                        <div className="modal fade" id="confirmDelete" aria-labelledby="confirmDelete" aria-hidden="true" tabIndex={-1} role="dialog">
                           <div className="modal-dialog modal-sm">
                             <div className="modal-content">
                               <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel"><strong>Xác nhận xóa phòng</strong> </h5>
+                                <h5 className="modal-title" id="exampleModalLabel"><strong>Xác nhận xóa thành viên</strong> </h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div className="modal-body">
-                                Ấn nút <button type="button" className="btn btn-primary" style={{ backgroundColor: "red" }}> Xóa phòng </button> bên dưới để xác nhận.
+                                Xác nhận xóa thành viên tên <br/> <strong>{pname}</strong>
                               </div>
                               <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" style={{ backgroundColor: "red" }} onClick={() => submitDelete()}> Xóa phòng </button>
+                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" style={{ backgroundColor: "red" }} onClick={() => submitDelete()}> Xóa thành viên </button>
                               </div>
                             </div>
                           </div>
-                        </div> */}
+                        </div>
 
                         <a
-                        // data-bs-toggle="modal" data-bs-target="#changeRoom" onClick={() => updateState(room.id, room.name, room.area, room.price)}
+                          data-bs-toggle="modal" data-bs-target="#changePerson" onClick={() => updateState(person.id, person.citizen_identification_card, person.name, person.date_of_birth, person.phone, person.email, "changeForm")}
                         >
                           <FaEdit
                             style={{ fontSize: "1.5rem", color: "#17a2b8" }}
                           />
                         </a>
 
-                        {/* <div className="modal fade" id="changeRoom" aria-labelledby="changeRoom" aria-hidden="true" tabIndex={-1} role="dialog">
+                        <div className="modal fade" id="changePerson" aria-labelledby="changePerson" aria-hidden="true" tabIndex={-1} role="dialog">
                           <div className="modal-dialog modal-lg">
                             <div className="modal-content">
                               <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel"><strong>Thay đổi thông tin phòng</strong> </h5>
+                                <h5 className="modal-title" id="exampleModalLabel"><strong>Thay đổi thông tin thành viên</strong> </h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div className="modal-body">
-                                <form onSubmit={submitChange}>
+                                <form id="changeForm" onSubmit={submitChange}>
                                   <div className="form-group mt-3">
-                                    <div className="col-xs-2">
-                                      <label>Số phòng</label>
+                                    <div className="col">
+                                      <label>Tên</label>
                                       <input
                                         type="text"
                                         className="form-control"
-                                        placeholder={name}
-                                        onChange={(e) => setName(e.target.value)}
+                                        placeholder={pname}
+                                        onChange={(e) => setPname(e.target.value)}
                                       />
                                     </div>
-                                    <div className="col-xs-3">
-                                      <label>Diện tích (m2)</label>
+                                    <div className="col">
+                                      <label>Số CCCD</label>
                                       <input
                                         type="text"
                                         className="form-control"
-                                        placeholder={area}
-                                        onChange={(e) => setArea(e.target.value)}
+                                        placeholder={pcic}
+                                        onChange={(e) => setPcic(e.target.value)}
                                       />
                                     </div>
-                                    <div className="col-xs-4">
-                                      <label>Giá dịch vụ hàng tháng <br /> (không bao gồm điện, nước)</label>
+                                    <div className="col">
+                                      <label>Ngày tháng năm sinh</label>
                                       <input
                                         type="text"
                                         className="form-control"
-                                        placeholder={price}
-                                        onChange={(e) => setPrice(e.target.value)}
+                                        placeholder={pdob}
+                                        onChange={(e) => setPdob(e.target.value)}
+                                      />
+                                    </div>
+                                    <div className="col">
+                                      <label>Số điện thoại</label>
+                                      <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder={pphone}
+                                        onChange={(e) => setPphone(e.target.value)}
+                                      />
+                                    </div>
+                                    <div className="col">
+                                      <label>Email</label>
+                                      <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder={pemail}
+                                        onChange={(e) => setPemail(e.target.value)}
                                       />
                                     </div>
                                   </div>
@@ -425,7 +496,7 @@ export const Family = () => {
                               </div>
                             </div>
                           </div>
-                        </div> */}
+                        </div>
 
                       </div>
                     </StyledTableCell>
