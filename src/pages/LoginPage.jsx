@@ -71,6 +71,11 @@ export function LoginPage() {
         }
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        SignIn();
+    }
+
     return (
         <div className='bg'>
             <div className="Auth-form-container">
@@ -82,7 +87,7 @@ export function LoginPage() {
                     </ol>
                 </div>
                 <br />
-                <form className="Auth-form">
+                <form className="Auth-form" onSubmit={handleSubmit}>
                     <div className="Auth-form-content">
                         <h3 className="Auth-form-title">Đăng Nhập</h3>
                         <div className="form-group mt-3">
@@ -114,6 +119,7 @@ export function LoginPage() {
                                     type="password"
                                     className="form-control"
                                     placeholder="Nhập mật khẩu"
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
                             </div>
                         </div>
