@@ -170,10 +170,6 @@ export const Family = () => {
     e.target.reset();
   };
 
-  // $('#myModal').on('hidden.bs.modal', function () {
-  //     $('#myModal form')[0].reset();
-  // });
-
   return (
     <div className="wrapper">
       <aside id="sidebar" className="js-sidebar user">
@@ -261,7 +257,7 @@ export const Family = () => {
                       <div className="col">
                         <label>Ngày tháng năm sinh</label>
                         <input
-                          type="text"
+                          type="date"
                           className="form-control"
                           placeholder="2023-12-26"
                           onChange={(e) => setPdob(e.target.value)}
@@ -463,7 +459,7 @@ export const Family = () => {
                                     <div className="col">
                                       <label>Ngày tháng năm sinh</label>
                                       <input
-                                        type="text"
+                                        type="date"
                                         className="form-control"
                                         placeholder={pdob}
                                         onChange={(e) => setPdob(e.target.value)}
