@@ -20,35 +20,6 @@ import { FaEdit } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 
-//Table
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { useStepContext } from "@mui/material";
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 20,
-  },
-}));
-
 export const Family = () => {
   return (
     <div className="wrapper">

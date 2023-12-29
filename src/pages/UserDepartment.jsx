@@ -13,7 +13,12 @@ import { MdOutlineCreditCard } from "react-icons/md";
 import { RiComputerFill } from "react-icons/ri";
 import { RiMotorbikeFill } from "react-icons/ri";
 
+import { UserRoomRegisters } from '../components/UserRoomRegisters';
+import { UserRoomViewList } from '../components/UserRoomViewList';
+
 export const UserDepartment = () => {
+  const [dummy, setDummy] = useState(false);
+
   return (
     <div className="wrapper">
     <aside id="sidebar" className="js-sidebar user">
@@ -54,8 +59,12 @@ export const UserDepartment = () => {
         </div>
       </aside>
       <div className="main">
-        
-        </div>
+        <main className="content px-3 py-4 pb-4">
+          <UserRoomRegisters dummy={dummy} refresh={() => setDummy(dummy ^ 1)}/>
+          <br/>
+          <UserRoomViewList dummy={dummy} refresh={() => setDummy(dummy ^ 1)}/>
+        </main>
+      </div>
     </div>
   );
 };
