@@ -15,7 +15,7 @@ import { RiMotorbikeFill } from "react-icons/ri";
 
 export const UserMain = () => {
   const BASE_URL = "http://localhost:8000";
-  const [room, setRoom] = useState({});
+  const [room, setRoom] = useState(null);
   const [persons, setPersons] = useState([]);
   const [transports, setTransports] = useState([]);
 
@@ -40,7 +40,12 @@ export const UserMain = () => {
           alert(response.data.error);
         } else {
           console.log(response.data.room);
-          setRoom(response.data.room);
+          if(typeof(response.data.room) === "string") {
+            console.log("Room is null");
+          }
+          else {
+            setRoom(response.data.room);
+          }
         }
       } catch (error) {
         alert("User Own Room Error");
