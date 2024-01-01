@@ -6,16 +6,8 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Admin.css";
 
-import { FaHome } from "react-icons/fa";
-import { MdOutlineFamilyRestroom } from "react-icons/md";
-import { FaBuilding } from "react-icons/fa6";
-import { MdOutlineCreditCard } from "react-icons/md";
-import { RiComputerFill } from "react-icons/ri";
-import { RiMotorbikeFill } from "react-icons/ri";
 import { FaTrashAlt } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
 
 //Table
 import * as React from "react";
@@ -140,7 +132,7 @@ export const FamilyTransportList = () => {
             </h1>
 
             <div className="add-department">
-                <button type="button" className="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#addTransport" onClick={() => updateStateTransport('', '', '', "addTransportForm")}>
+                <button type="button" className="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#addTransport" onClick={() => updateStateTransport('', '', 'Ô tô', "addTransportForm")}>
                     <strong>Thêm phương tiện </strong>
                     <FaPlus
                         style={{
@@ -171,12 +163,16 @@ export const FamilyTransportList = () => {
                                     </div>
                                     <div className="col">
                                         <label>Loại phương tiện</label>
-                                        <input
+                                        {/* <input
                                             type="text"
                                             className="form-control"
                                             placeholder="Xe máy"
                                             onChange={(e) => setTtype(e.target.value)}
-                                        />
+                                        /> */}
+                                        <select form="addTransportForm" onChange={(e) => setTtype(e.target.value)}>
+                                            <option value="Ô tô">Ô tô</option>
+                                            <option value="Xe máy">Xe máy</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div className="modal-footer">

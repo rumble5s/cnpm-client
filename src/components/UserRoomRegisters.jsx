@@ -148,6 +148,14 @@ export const UserRoomRegisters =  ({dummy, refresh}) => {
                   <br /> (không bao gồm điện, nước)
                 </strong>
               </StyledTableCell>
+              <StyledTableCell
+                align="left"
+                style={{ fontSize: "0.9rem", padding: "10px" }}
+              >
+                <strong>
+                  Trạng thái
+                </strong>
+              </StyledTableCell>
               <StyledTableCell align="right"></StyledTableCell>
               <StyledTableCell align="left"></StyledTableCell>
             </StyledTableRow>
@@ -181,6 +189,12 @@ export const UserRoomRegisters =  ({dummy, refresh}) => {
                   style={{ fontSize: "0.9rem", padding: "10px" }}
                 >
                   {register.room.price}
+                </StyledTableCell>
+                <StyledTableCell
+                  align="left"
+                  style={{ fontSize: "0.9rem", padding: "10px", backgroundColor: register.status === "Accepted" ? "green" : (register.status === "pending" ? "gray" : "red") }}
+                >
+                  <strong>{register.status}</strong>
                 </StyledTableCell>
                 <StyledTableCell
                   align="left"
