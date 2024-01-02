@@ -4,7 +4,9 @@ import { ReactDOM } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/Admin.css";
+import "../css/User.css";
+
+import { Logout } from '../components/Logout.jsx';
 
 import { FamilyMemberList } from "../components/FamilyMemberList";
 import { FamilyTransportList } from "../components/FamilyTransportList";
@@ -25,6 +27,7 @@ export const Family = () => {
     <div className="wrapper">
       <aside id="sidebar" className="js-sidebar user">
         {/* Content For Sidebar */}
+        <Logout/>
         <div className="h-100">
           <div className="sidebar-logo">
             <a className="text-center" to="/user">
