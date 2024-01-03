@@ -132,7 +132,7 @@ export const AdminViewFamily = ({persons}) => {
                   align="left"
                   style={{ fontSize: "0.9rem", padding: "10px" }}
                 >
-                  {person.date_of_birth}
+                  {(new Date(person.date_of_birth)).toLocaleDateString('en-GB')}
                 </StyledTableCell>
                 <StyledTableCell
                   align="left"
