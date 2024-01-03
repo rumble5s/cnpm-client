@@ -92,7 +92,7 @@ export const ParkingFee = () => {
     <div className="wrapper">
       <aside id="sidebar" className="js-sidebar">
         {/* Content For Sidebar */}
-        <Logout/>
+        <Logout />
         <div className="h-100">
           <div className="sidebar-logo">
             <a className="text-center" to="/admin">

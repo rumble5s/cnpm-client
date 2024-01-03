@@ -208,8 +208,41 @@ export const BillInformation = () => {
       <div className="main">
         <main className="content px-3 py-4 pb-4">
           <h1>
-            <strong>Danh sách hóa đơn</strong>
+            <strong>Danh sách hóa đơn</strong></h1>
+            {/* <form id="billFilter" className="d-flex">
+              <div className="p-2 flex-fill">
+                <input
+                className="form-control me-2"
+                type="text"
+                placeholder="Tìm kiếm theo năm🔎"
+                aria-label="Search"
+                onChange={(e) => setFilterYear(e.target.value)}
+              />
+              </div>
+              <div className="p-2 flex-fill">
+                <input
+                className="form-control me-2"
+                type="text"
+                placeholder="Tìm kiếm theo tháng🔎"
+                aria-label="Search"
+                onChange={(e) => setFilterMonth(e.target.value)}
+              />
+              </div>
+              <div className="p-2 flex-fill">
+                <select form="billFilter" onChange={(e) => setFilterStatus(e.target.value)}>
+                <option value="">Trạng thái thanh toán bất kỳ</option>
+                <option value="True">Đã thanh toán</option>
+                <option value="False">Chưa thanh toán</option>
+              </select>
+              {' '}
+              <FaSearch size={35} />
+              </div>
+              
+              
+              
+            </form> */}
             <form id="billFilter" className="d-flex">
+            <div className="p-2 flex-fill">
               <input
                 className="form-control me-2"
                 type="text"
@@ -217,6 +250,8 @@ export const BillInformation = () => {
                 aria-label="Search"
                 onChange={(e) => setFilterYear(e.target.value)}
               />
+            </div>
+            <div className="p-2 flex-fill">
               <input
                 className="form-control me-2"
                 type="text"
@@ -224,15 +259,21 @@ export const BillInformation = () => {
                 aria-label="Search"
                 onChange={(e) => setFilterMonth(e.target.value)}
               />
-              <select form="billFilter" onChange={(e) => setFilterStatus(e.target.value)}>
+            </div>
+            <div className="p-2 search-bar-1">
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                onChange={(e) => setFilterStatus(e.target.value)}
+              >
                 <option value="">Trạng thái thanh toán bất kỳ</option>
                 <option value="True">Đã thanh toán</option>
                 <option value="False">Chưa thanh toán</option>
               </select>
-              {' '}
-              <FaSearch size={35} />
-            </form>
-          </h1>
+              {/* <FaSearch size={35} /> */}
+            </div>
+          </form>
+          
 
           <TableContainer component={Paper}>
             <Table

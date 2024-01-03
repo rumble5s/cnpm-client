@@ -26,7 +26,7 @@ export const AdminPage = () => {
     <div className="wrapper">
       <aside id="sidebar" className="js-sidebar">
         {/* Content For Sidebar */}
-        <Logout/>
+        <Logout />
         <div className="h-100">
           <div className="sidebar-logo">
             <a className="text-center" to="/admin">
@@ -75,9 +75,11 @@ export const AdminPage = () => {
         </div>
       </aside>
       <div className="main">
+        
         <main className="content px-3 py-2">
+        <h1><strong>Thống kê</strong></h1>
           <div className="container-fluid">
-            <h1 className="content block-item"><strong>Thống kê</strong></h1>
+            
             <div className="container text-center">
               <div class="row">
                 <div class="col-xl-3 col-md-6 mb-4">

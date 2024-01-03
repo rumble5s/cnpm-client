@@ -17,6 +17,8 @@ export function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    // const [confirmPassword, setConfirmPassword] = useState('');
+
     const SignIn = async () => {
         try {
             const response = await axios({
@@ -57,6 +59,11 @@ export function LoginPage() {
                     type: "roomate"
                 }
             });
+
+            // if(confirmPassword !== password) {
+            //     alert("Confirm password is not match");
+            //     return;
+            // }
 
             if(response.data.error)
                 alert(response.data.error);
@@ -151,7 +158,16 @@ export function LoginPage() {
                                                 <div className="col-xs-3">
                                                     <label>Mật khẩu</label>
                                                     <input
-                                                        type="text"
+                                                        type="password"
+                                                        className="form-control"
+                                                        placeholder="123456"
+                                                        // onChange={(e) => setArea(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-xs-3">
+                                                    <label>Xác nhận mật khẩu</label>
+                                                    <input
+                                                        type="password"
                                                         className="form-control"
                                                         placeholder="123456"
                                                         // onChange={(e) => setArea(e.target.value)}

@@ -31,7 +31,7 @@ export const Family = () => {
         <div className="h-100">
           <div className="sidebar-logo">
             <a className="text-center" to="/user">
-              Chung cư X
+              Landmark 90
             </a>
           </div>
           <ul className="sidebar-nav">

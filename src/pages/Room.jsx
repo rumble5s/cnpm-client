@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Admin.css";
 
 import { Logout } from '../components/Logout.jsx';
-
 import { AdminViewFamily } from "../components/AdminViewFamily";
 import { AdminViewFamilyTransports } from "../components/AdminViewFamilyTransports";
 
@@ -184,7 +183,7 @@ export const Room = () => {
     <div className="wrapper">
       <aside id="sidebar" className="js-sidebar">
         {/* Content For Sidebar */}
-        <Logout/>
+        <Logout />
         <div className="h-100">
           <div className="sidebar-logo">
             <a className="text-center" to="/admin">
