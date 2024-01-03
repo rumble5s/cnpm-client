@@ -245,7 +245,7 @@ export const UserMain = () => {
             <div className="container text-center">
               <div className="row">
                 <div className="col-xl-3 col-md-6 mb-4">
-                  <div className="card border-left-primary shadow h-100 py-2">
+                  <div className="card border-left-primary shadow h-100 py-3">
                     <div className="card-body">
                       <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
@@ -260,7 +260,7 @@ export const UserMain = () => {
                           <i
                             className="bi bi-house"
                             style={{
-                              fontSize: "4rem",
+                              fontSize: "6rem",
                               color: "cornflowerblue",
                             }}
                           ></i>
@@ -271,7 +271,7 @@ export const UserMain = () => {
                 </div>
 
                 <div className="col-xl-3 col-md-6 mb-4">
-                  <div className="card border-left-success shadow h-100 py-2">
+                  <div className="card border-left-success shadow h-100 py-3">
                     <div className="card-body">
                       <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
@@ -285,7 +285,7 @@ export const UserMain = () => {
                         <div className="col-auto">
                           <i
                             className="bi bi-people"
-                            style={{ fontSize: "4rem", color: "green" }}
+                            style={{ fontSize: "6rem", color: "green" }}
                           ></i>
                         </div>
                       </div>
@@ -294,7 +294,7 @@ export const UserMain = () => {
                 </div>
 
                 <div className="col-xl-3 col-md-6 mb-4">
-                  <div className="card border-left-info shadow h-100 py-2">
+                  <div className="card border-left-info shadow h-100 py-3">
                     <div className="card-body">
                       <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
@@ -308,7 +308,7 @@ export const UserMain = () => {
                         <div className="col-auto">
                           <i
                             className="bi bi-truck"
-                            style={{ fontSize: "4rem", color: "#17a2b8" }}
+                            style={{ fontSize: "6rem", color: "#17a2b8" }}
                           ></i>
                         </div>
                       </div>
@@ -317,7 +317,7 @@ export const UserMain = () => {
                 </div>
 
                 <div className="col-xl-3 col-md-6 mb-4">
-                  <div className="card border-left-warning shadow h-100 py-2">
+                  <div className="card border-left-warning shadow h-100 py-3">
                     <div className="card-body">
                       <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
@@ -328,14 +328,14 @@ export const UserMain = () => {
                               (không bao gồm điện, nước)
                             </strong>
                           </div>
-                          <div className="h3 mb-0 font-weight-bold text-gray-800">
-                            {parseInt(room.price)}đ
+                          <div className="h6 mb-0 font-weight-bold text-gray-800">
+                            {parseInt(room.price).toLocaleString()}đ
                           </div>
                         </div>
                         <div className="col-auto">
                           <i
                             className="bi bi-piggy-bank"
-                            style={{ fontSize: "4rem", color: "orange" }}
+                            style={{ fontSize: "6rem", color: "orange" }}
                           ></i>
                         </div>
                       </div>
@@ -344,9 +344,9 @@ export const UserMain = () => {
                 </div>
               </div>
             </div>
-            </div>
+          </div>
         </main>
       </div>
-    </div>
+      </div>
   );
 };
