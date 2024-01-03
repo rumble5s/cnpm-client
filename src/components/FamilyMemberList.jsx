@@ -226,10 +226,12 @@ export const FamilyMemberList = () => {
                   <div className="col">
                     <label>Ngày tháng năm sinh</label>
                     <input
-                      type="date"
+                      type="text"
                       className="form-control"
-                      placeholder="2023-12-26"
+                      placeholder={(new Date()).toLocaleDateString('en-GB')}
                       onChange={(e) => setPdob(e.target.value)}
+                      onFocus={(e) => (e.target.type = "date")}
+                      onBlur={(e) => (e.target.type = "text")}
                     />
                   </div>
                   <div className="col">
@@ -428,10 +430,12 @@ export const FamilyMemberList = () => {
                                 <div className="col">
                                   <label>Ngày tháng năm sinh</label>
                                   <input
-                                    type="date"
+                                    type="text"
                                     className="form-control"
-                                    placeholder={pdob}
+                                    placeholder={(new Date(pdob)).toLocaleDateString('en-GB')}
                                     onChange={(e) => setPdob(e.target.value)}
+                                    onFocus={(e) => (e.target.type = "date")}
+                                    onBlur={(e) => (e.target.type = "text")}
                                   />
                                 </div>
                                 <div className="col">

@@ -6,8 +6,6 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Admin.css";
 
-import { Logout } from '../components/Logout.jsx';
-
 import { FaHome } from "react-icons/fa";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
 import { FaBuilding } from "react-icons/fa6";
@@ -19,6 +17,8 @@ import { FaEdit } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { LuClipboardSignature } from "react-icons/lu";
+
+import { Logout } from '../components/Logout.jsx';
 
 //Table
 import * as React from "react";
