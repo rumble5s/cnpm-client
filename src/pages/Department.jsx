@@ -171,25 +171,25 @@ export const Department = () => {
 
   return (
     <div className="wrapper">
-      <aside id="sidebar" className="js-sidebar">
+      <aside id="sidebar" className="js-sidebar user">
         {/* Content For Sidebar */}
         <Logout />
         <div className="h-100">
           <div className="sidebar-logo">
-            <a className="text-center" to="/admin">
+            <a className="text-dark" to="/admin">
               Admin
             </a>
           </div>
           <ul className="sidebar-nav">
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/admin">
+              <Link className="link-dark sidebar-link" to="/admin">
                 <FaHome className="icon-sidebar" />
                 Trang chủ
               </Link>
             </li>
             <li className="sidebar-item">
               <Link
-                className="link-secondary sidebar-link current-site"
+                className="link-dark sidebar-link current-site"
                 to="/department"
               >
                 <FaBuilding className="icon-sidebar" />
@@ -198,25 +198,25 @@ export const Department = () => {
             </li>
 
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/room">
+              <Link className="link-dark sidebar-link" to="/room">
                 <MdOutlineFamilyRestroom className="icon-sidebar" />
                 Hộ gia đình
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/bill">
+              <Link className="link-dark sidebar-link" to="/bill">
                 <MdOutlineCreditCard className="icon-sidebar" />
                 Thông tin thu phí
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/register">
+              <Link className="link-dark sidebar-link" to="/register">
                 <RiComputerFill className="icon-sidebar" />
                 Danh sách đăng ký
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/parking">
+              <Link className="link-dark sidebar-link" to="/parking">
                 <RiMotorbikeFill className="icon-sidebar" />
                 Phí trông xe
               </Link>

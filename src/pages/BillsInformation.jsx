@@ -157,20 +157,20 @@ export const BillInformation = () => {
         <Logout />
         <div className="h-100">
           <div className="sidebar-logo">
-            <a className="text-center" to="/admin">
+            <a className="text-black" to="/admin">
               Admin
             </a>
           </div>
           <ul className="sidebar-nav">
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/admin">
+              <Link className="link-dark sidebar-link" to="/admin">
                 <FaHome className="icon-sidebar" />
                 Trang chủ
               </Link>
             </li>
             <li className="sidebar-item">
               <Link
-                className="link-secondary sidebar-link"
+                className="link-dark sidebar-link"
                 to="/department"
               >
                 <FaBuilding className="icon-sidebar" />
@@ -179,25 +179,25 @@ export const BillInformation = () => {
             </li>
 
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/room">
+              <Link className="link-dark sidebar-link" to="/room">
                 <MdOutlineFamilyRestroom className="icon-sidebar" />
                 Hộ gia đình
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link current-site" to="/bill">
+              <Link className="link-dark sidebar-link current-site" to="/bill">
                 <MdOutlineCreditCard className="icon-sidebar" />
                 Thông tin thu phí
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/register">
+              <Link className="link-dark sidebar-link" to="/register">
                 <RiComputerFill className="icon-sidebar" />
                 Danh sách đăng ký
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/parking">
+              <Link className="link-dark sidebar-link" to="/parking">
                 <RiMotorbikeFill className="icon-sidebar" />
                 Phí trông xe
               </Link>
@@ -423,7 +423,7 @@ export const BillInformation = () => {
                           <FaTrashAlt
                             style={{ fontSize: "1.5rem", color: "#E32929" }}
                             // className="delete-row"
-                          />
+                          />  
                         </a>
 
                         <div className="modal fade" id="deleteBill" aria-labelledby="deleteBill" aria-hidden="true" tabIndex={-1} role="dialog">

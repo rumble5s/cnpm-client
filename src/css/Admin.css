@@ -66,14 +66,14 @@ h4 {
 #sidebar {
   max-width: 264px;
   min-width: 264px;
-  background-color: #FFB600;
+  background-color: #D9F1F5;
   transition: all 0.35s ease-in-out;
 }
 
 #sidebar.user {
   max-width: 264px;
   min-width: 264px;
-  background-color: cyan;
+  background-color: #F2A220;
   transition: all 0.35s ease-in-out;
 }
 
@@ -107,6 +107,7 @@ h4 {
   margin-bottom: 0;
   padding-left: 0;
   margin-left: 0;
+  color: black
 }
 
 .sidebar-header {
@@ -117,13 +118,13 @@ h4 {
 
 .sidebar-link {
   padding: 0.625rem 1.625rem;
-  color: #e9ecef;
+  color: black;
   position: relative;
   display: block;
   font-size: 1.25rem;
 }
 
-.sidebar-link[data-bs-toggle="collapse"]::after {
+/* .sidebar-link[data-bs-toggle="collapse"]::after {
   border: solid;
   border-width: 0 0.075rem 0.075rem 0;
   content: "";
@@ -139,10 +140,10 @@ h4 {
 .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
   transform: rotate(45deg);
   transition: all 0.2s ease-out;
-}
+} */
 
 /* .sidebar-item {
-  ccolor: rgba(255, 255, 255, 0.8);
+  color: black;
 } */
 
 .avatar {
