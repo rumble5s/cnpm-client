@@ -28,32 +28,32 @@ export const UserDepartment = () => {
         <Logout/>
         <div className="h-100">
           <div className="sidebar-logo">
-            <a className="text-center" to="/user">
+            <a className="text-black" to="/user">
               Landmark 90
             </a>
           </div>
           <ul className="sidebar-nav">
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/user">
+              <Link className="link-dark sidebar-link" to="/user">
                   <FaHome className="icon-sidebar" />
                   Trang chủ
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link current-site" to="/udepartment">
+              <Link className="link-dark sidebar-link current-site" to="/udepartment">
                 <FaBuilding className="icon-sidebar" />
                 Danh sách căn hộ
               </Link>
             </li>
 
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/family">
+              <Link className="link-dark sidebar-link" to="/family">
                 <MdOutlineFamilyRestroom className="icon-sidebar" />
                 Hộ gia đình
               </Link>
             </li>
             <li className="sidebar-item">
-              <Link className="link-secondary sidebar-link" to="/userbills">
+              <Link className="link-dark sidebar-link" to="/userbills">
                 <MdOutlineCreditCard className="icon-sidebar" />
                 Hóa đơn
               </Link>

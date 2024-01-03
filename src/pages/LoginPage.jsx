@@ -151,7 +151,7 @@ export function LoginPage() {
                                                     <input
                                                         type="text"
                                                         className="form-control"
-                                                        placeholder="user01@gmail.com"
+                                                        placeholder="Nhập tên tài khoản"
                                                         // onChange={(e) => setName(e.target.value)}
                                                     />
                                                 </div>
@@ -160,7 +160,7 @@ export function LoginPage() {
                                                     <input
                                                         type="password"
                                                         className="form-control"
-                                                        placeholder="123456"
+                                                        placeholder="Nhập mật khẩu"
                                                         // onChange={(e) => setArea(e.target.value)}
                                                     />
                                                 </div>
@@ -169,7 +169,7 @@ export function LoginPage() {
                                                     <input
                                                         type="password"
                                                         className="form-control"
-                                                        placeholder="123456"
+                                                        placeholder="Nhập mật khẩu xác nhận"
                                                         // onChange={(e) => setArea(e.target.value)}
                                                     />
                                                 </div>
