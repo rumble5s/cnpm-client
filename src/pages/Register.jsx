@@ -18,6 +18,8 @@ import { FaPlus } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { LuClipboardSignature } from "react-icons/lu";
 
+import { Logout } from '../components/Logout.jsx';
+
 //Table
 import * as React from "react";
 import { styled } from "@mui/material/styles";
@@ -141,6 +143,7 @@ export const Register = () => {
     <div className="wrapper">
       <aside id="sidebar" className="js-sidebar">
         {/* Content For Sidebar */}
+        <Logout/>
         <div className="h-100">
           <div className="sidebar-logo">
             <a className="text-center" to="/admin">
