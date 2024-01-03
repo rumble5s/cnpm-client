@@ -6,6 +6,8 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Admin.css";
 
+import { Logout } from '../components/Logout.jsx';
+
 import { FaHome } from "react-icons/fa";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
 import { FaBuilding } from "react-icons/fa6";
@@ -171,6 +173,7 @@ export const Department = () => {
     <div className="wrapper">
       <aside id="sidebar" className="js-sidebar">
         {/* Content For Sidebar */}
+        <Logout />
         <div className="h-100">
           <div className="sidebar-logo">
             <a className="text-center" to="/admin">
@@ -225,6 +228,7 @@ export const Department = () => {
         <main className="content px-3 py-4 pb-4">
           <h1>
             <strong>Danh sách căn hộ</strong>
+          </h1>
             <form className="d-flex">
               <input
                 className="form-control me-2"
@@ -236,7 +240,7 @@ export const Department = () => {
               {' '}
               <FaSearch size={35}/>
             </form>
-          </h1>
+          
           <div className="add-department">
           <button type="button" className="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#addRoom" onClick={() => updateState('','','','')}>
             <strong>Thêm căn hộ </strong>

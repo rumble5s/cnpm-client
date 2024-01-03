@@ -17,6 +17,8 @@ export function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    // const [confirmPassword, setConfirmPassword] = useState('');
+
     const SignIn = async () => {
         try {
             const response = await axios({
@@ -38,7 +40,7 @@ export function LoginPage() {
             else {
                 const group_id = response.data.group_id;
                 localStorage.setItem('groupid', JSON.stringify({ group_id }));
-                navigate("/");
+                navigate("/user");
             }
 
         } catch (error) {
@@ -57,6 +59,11 @@ export function LoginPage() {
                     type: "roomate"
                 }
             });
+
+            // if(confirmPassword !== password) {
+            //     alert("Confirm password is not match");
+            //     return;
+            // }
 
             if(response.data.error)
                 alert(response.data.error);
@@ -127,6 +134,63 @@ export function LoginPage() {
                             <button type="submit" className="btn btn-primary">
                                 Đăng nhập
                             </button>
+                            <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#signUp">Đăng ký</button>
+                        </div>
+                        <div className="modal fade" id="signUp" aria-labelledby="signUp" aria-hidden="true" tabIndex={-1} role="dialog">
+                            <div className="modal-dialog modal-lg">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="exampleModalLabel"><strong>Đăng ký tài khoản</strong> </h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        <form onSubmit={SignUp}>
+                                            <div className="form-group mt-3">
+                                                <div className="col-xs-2">
+                                                    <label>Tài khoản</label>
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        placeholder="user01@gmail.com"
+                                                        // onChange={(e) => setName(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-xs-3">
+                                                    <label>Mật khẩu</label>
+                                                    <input
+                                                        type="password"
+                                                        className="form-control"
+                                                        placeholder="123456"
+                                                        // onChange={(e) => setArea(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-xs-3">
+                                                    <label>Xác nhận mật khẩu</label>
+                                                    <input
+                                                        type="password"
+                                                        className="form-control"
+                                                        placeholder="123456"
+                                                        // onChange={(e) => setArea(e.target.value)}
+                                                    />
+                                                </div>
+                                                {/* <div className="col-xs-4">
+                                                    <label>Giá dịch vụ hàng tháng <br /> (không bao gồm điện, nước)</label>
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        placeholder="250000"
+                                                        onChange={(e) => setPrice(e.target.value)}
+                                                    />
+                                                </div> */}
+                                            </div>
+                                            <div className="modal-footer">
+                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ backgroundColor: "red" }}>Hủy</button>
+                                                <button type="submit" className="btn btn-primary" data-bs-dismiss="modal" style={{ backgroundColor: "green" }}> Xác nhận </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         {/* <p className="forgot-password text-right mt-2">
                         Forgot <a href="#">password?</a>
