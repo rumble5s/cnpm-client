@@ -422,7 +422,7 @@ export const BillInformation = () => {
                         >
                           <FaTrashAlt
                             style={{ fontSize: "1.5rem", color: "#E32929" }}
-                            className="delete-row"
+                            // className="delete-row"
                           />
                         </a>
 

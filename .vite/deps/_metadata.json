@@ -1,0 +1,161 @@
+{
+  "hash": "b9943db9",
+  "browserHash": "af1d9738",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "596c8441",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "4247922a",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "b586b517",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "cd8e8920",
+      "needsInterop": false
+    },
+    "react-icons/hi2": {
+      "src": "../../node_modules/react-icons/hi2/index.esm.js",
+      "file": "react-icons_hi2.js",
+      "fileHash": "6052cb5a",
+      "needsInterop": false
+    },
+    "react-icons/ai": {
+      "src": "../../node_modules/react-icons/ai/index.esm.js",
+      "file": "react-icons_ai.js",
+      "fileHash": "f85961ba",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.esm.js",
+      "file": "react-icons_fa.js",
+      "fileHash": "a11c854e",
+      "needsInterop": false
+    },
+    "react-icons/md": {
+      "src": "../../node_modules/react-icons/md/index.esm.js",
+      "file": "react-icons_md.js",
+      "fileHash": "967089b1",
+      "needsInterop": false
+    },
+    "react-icons/fa6": {
+      "src": "../../node_modules/react-icons/fa6/index.esm.js",
+      "file": "react-icons_fa6.js",
+      "fileHash": "e260c4e0",
+      "needsInterop": false
+    },
+    "react-icons/ri": {
+      "src": "../../node_modules/react-icons/ri/index.esm.js",
+      "file": "react-icons_ri.js",
+      "fileHash": "b7217364",
+      "needsInterop": false
+    },
+    "@mui/material/styles": {
+      "src": "../../node_modules/@mui/material/styles/index.js",
+      "file": "@mui_material_styles.js",
+      "fileHash": "5a818a20",
+      "needsInterop": false
+    },
+    "@mui/material/Table": {
+      "src": "../../node_modules/@mui/material/Table/index.js",
+      "file": "@mui_material_Table.js",
+      "fileHash": "83ef272a",
+      "needsInterop": false
+    },
+    "@mui/material/TableBody": {
+      "src": "../../node_modules/@mui/material/TableBody/index.js",
+      "file": "@mui_material_TableBody.js",
+      "fileHash": "e63fd89d",
+      "needsInterop": false
+    },
+    "@mui/material/TableCell": {
+      "src": "../../node_modules/@mui/material/TableCell/index.js",
+      "file": "@mui_material_TableCell.js",
+      "fileHash": "fe1de6e4",
+      "needsInterop": false
+    },
+    "@mui/material/TableContainer": {
+      "src": "../../node_modules/@mui/material/TableContainer/index.js",
+      "file": "@mui_material_TableContainer.js",
+      "fileHash": "d700d12a",
+      "needsInterop": false
+    },
+    "@mui/material/TableHead": {
+      "src": "../../node_modules/@mui/material/TableHead/index.js",
+      "file": "@mui_material_TableHead.js",
+      "fileHash": "0df1d632",
+      "needsInterop": false
+    },
+    "@mui/material/TableRow": {
+      "src": "../../node_modules/@mui/material/TableRow/index.js",
+      "file": "@mui_material_TableRow.js",
+      "fileHash": "1c0489f2",
+      "needsInterop": false
+    },
+    "@mui/material/Paper": {
+      "src": "../../node_modules/@mui/material/Paper/index.js",
+      "file": "@mui_material_Paper.js",
+      "fileHash": "409503ba",
+      "needsInterop": false
+    },
+    "chart.js/auto": {
+      "src": "../../node_modules/chart.js/auto/auto.js",
+      "file": "chart__js_auto.js",
+      "fileHash": "93f47702",
+      "needsInterop": false
+    },
+    "chart.js": {
+      "src": "../../node_modules/chart.js/dist/chart.js",
+      "file": "chart__js.js",
+      "fileHash": "c3d6e66d",
+      "needsInterop": false
+    },
+    "react-chartjs-2": {
+      "src": "../../node_modules/react-chartjs-2/dist/index.js",
+      "file": "react-chartjs-2.js",
+      "fileHash": "c1aee594",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-Z26C3JSD": {
+      "file": "chunk-Z26C3JSD.js"
+    },
+    "chunk-BG4JMREB": {
+      "file": "chunk-BG4JMREB.js"
+    },
+    "chunk-RZW3NXHI": {
+      "file": "chunk-RZW3NXHI.js"
+    },
+    "chunk-JSBEGMSD": {
+      "file": "chunk-JSBEGMSD.js"
+    },
+    "chunk-2HBRCMZH": {
+      "file": "chunk-2HBRCMZH.js"
+    },
+    "chunk-2RZKXFJM": {
+      "file": "chunk-2RZKXFJM.js"
+    },
+    "chunk-2CYDNEUM": {
+      "file": "chunk-2CYDNEUM.js"
+    },
+    "chunk-PSZ65TEE": {
+      "file": "chunk-PSZ65TEE.js"
+    },
+    "chunk-TCQZMY3T": {
+      "file": "chunk-TCQZMY3T.js"
+    }
+  }
+}
